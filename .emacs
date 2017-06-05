@@ -36,7 +36,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (projectile ensime magit yaml-mode hcl-mode zenburn-theme))))
+    (ag projectile ensime magit yaml-mode hcl-mode zenburn-theme))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -56,3 +56,8 @@
 (add-to-list 'load-path "~/.emacs.d/neotree")
 (require 'neotree)
 (global-set-key [f8] 'neotree-toggle)
+
+(setq ag-highlight-search t)
+
+(if (eq system-type 'darwin)
+  (setq ag-executable "/usr/local/bin/ag"))
