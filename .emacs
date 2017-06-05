@@ -30,19 +30,10 @@
 (package-initialize)
 
 (custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
     (ag projectile ensime magit yaml-mode hcl-mode zenburn-theme))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+(custom-set-faces)
 
 (load-theme 'zenburn t)
 
@@ -61,3 +52,8 @@
 
 (if (eq system-type 'darwin)
   (setq ag-executable "/usr/local/bin/ag"))
+
+(if (eq system-type 'gnu/linux)
+  (set-face-attribute 'default nil :height 100)
+  (setq ensime-sbt-command "/usr/bin/sbt")
+  (setq sbt:program-name "/usr/bin/sbt"))
